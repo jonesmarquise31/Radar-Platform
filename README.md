@@ -66,6 +66,10 @@ Generalized patterns extracted from Radar functions, documented for reuse and re
 - [**Idempotent submissions**](./patterns/idempotent-submissions.md) — two-layer collapse via pre-check + unique-constraint catch
 - [**Real-time buy alerts**](./patterns/realtime-buy-alerts.md) — Stripe webhook → Telegram, fire-and-forget with 200-to-Stripe regardless of chat success
 
+## Glossary
+
+Definitions for terms used across the build log, design system, and patterns — product / methodology / engineering / design vocabulary in one place: [glossary.md](./glossary.md).
+
 ## Frameworks
 
 The intervention methodology used in Radar client engagements:
