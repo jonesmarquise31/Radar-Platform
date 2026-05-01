@@ -43,7 +43,7 @@ Each tier is its own surface. The Decode is deployed independently at [radar-dec
 - **Payments:** Stripe Checkout; server-side Stripe verification on every payment-gated write; Stripe webhooks for real-time buy events
 - **Notifications:** Telegram bot for operator alerts on every paid Stripe session
 - **AI:** Anthropic API (Claude) for diagnostic generation on the platform; the Decode is hand-written
-- **Surfaces:** `/quiz` (professional, free intake), `/rds` (paid diagnostic), `/coach` (career coaches), `/hiring` (recruiters/hiring teams), `radar-decode.netlify.app` (entry-tier Decode product)
+- **Surfaces:** `/quiz` (professional, free intake), `/rds` (paid diagnostic), `/coach` (career coaches), `/hiring` (recruiters/hiring teams), `radar-decode.netlify.app` (entry-tier Decode product), `/admin` (operator command center, auth-gated — see [architecture/admin-portal.md](./architecture/admin-portal.md))
 
 ## Build log
 
@@ -65,6 +65,12 @@ Generalized patterns extracted from Radar functions, documented for reuse and re
 - [**Verify-before-write with Stripe**](./patterns/stripe-verify-before-write.md) — re-verify payment server-side at every payment-gated write
 - [**Idempotent submissions**](./patterns/idempotent-submissions.md) — two-layer collapse via pre-check + unique-constraint catch
 - [**Real-time buy alerts**](./patterns/realtime-buy-alerts.md) — Stripe webhook → Telegram, fire-and-forget with 200-to-Stripe regardless of chat success
+
+## Architecture
+
+Deeper write-ups of how individual layers of the platform are built:
+
+- [**The admin portal**](./architecture/admin-portal.md) — `/admin` operator command center: CRM, DM pipeline, connections classifier, content intel, calendar, accounts. Where the platform actually gets run.
 
 ## Glossary
 
