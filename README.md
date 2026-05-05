@@ -52,6 +52,12 @@ Major releases and the technical decisions behind them are documented in [/build
 - [**V41 — The Radar Decode**](./build-log/v41-radar-decode.md) — standalone $47 entry-tier product, separate-domain deploy, post-payment intake flow, real-time buy alerts via Stripe webhook → Telegram
 - [**V40 — Funnel friction reduction**](./build-log/v40-funnel-friction.md) — name-only entry, results gated behind account creation, phone removal across paid flows
 
+## Events
+
+Public live sessions documented as structured architecture artifacts — audience composition, session architecture, mechanic, deliverable layers:
+
+- [**The Underprice Read**](./events/2026-05-08-the-underprice-read.md) — 45-minute live diagnostic session on the structural pricing gap mechanic; four-block architecture, three deliverable layers, anonymized live read (May 8, 2026)
+
 ## Design
 
 The visual system that runs across every Radar surface — typography hero, four-color palette, three-family type system, V39.1 stat-block component treatment, deliberate rejection of SaaS chrome:
