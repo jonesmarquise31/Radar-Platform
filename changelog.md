@@ -2,6 +2,19 @@
 
 All notable releases. Detailed write-ups for each release live in [/build-log](build-log).
 
+## V44 — Funnel Collapse + Director-Tier Offer (May 2026)
+
+V44 marks a structural simplification of the Radar platform. The dual-lane offer stack — multiple paid diagnostic and strategy products — has been collapsed into a single funnel architecture:
+
+- Two free diagnostic entry points feed one free terminal diagnostic
+- One premium engagement for director-tier operators
+
+The premium engagement, The Radar Special, is a four-week intelligence engagement built for directors, VPs, and C-suite operators who treat their career as a strategic position. Access is by waitlist only. Cohorts are capped.
+
+This simplification reflects a deliberate choice: premium offers built on framework legitimacy and capacity discipline, not volume.
+
+See [v44-funnel-collapse.md](build-log/v44-funnel-collapse.md).
+
 ## V42 — Dual-Lane Funnel
 May 3, 2026
 

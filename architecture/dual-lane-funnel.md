@@ -1,6 +1,7 @@
 # Dual-Lane Funnel
 
 **Date:** May 3, 2026
+**Status:** Superseded by [single-funnel.md](./single-funnel.md) (V44, May 2026). Preserved as historical reference for the V42-era architecture. The active platform no longer operates a dual-lane offer stack; both diagnostic axes still feed the same dataset, but the paid surfaces described below have been retired. See [build-log/v44-funnel-collapse.md](../build-log/v44-funnel-collapse.md) for the reasoning.
 
 ## What It Is
 

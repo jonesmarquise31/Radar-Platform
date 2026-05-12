@@ -16,23 +16,26 @@ The system was built on data from 250+ classified IT, cybersecurity, and finance
 
 ## Product tiers
 
-The line ladders from a fast, low-friction entry through a full diagnostic to a delivered engagement:
+The line is a single funnel: free diagnostic stack into one premium engagement.
 
 ```
-$47       The Radar Decode      One-page operator brief, written by hand,
-                                anchored to the buyer's actual LinkedIn
-                                profile and resume. 48-hour delivery.
+Free      Quick Read            Two five-minute diagnostic entries —
+                                perception axis and valuation axis.
+                                Anonymous, no email.
 
-$97       Radar RDS             The full diagnostic: 23-question intake,
-                                archetype classification, structured report
-                                naming the signals causing misalignment.
+Free      Full Diagnostic       Account-gated. Full archetype classification
+                                + cross-dimensional signal breakdown +
+                                structured verdict. The terminal free
+                                surface.
 
-$1,497    Radar Full System     Engagement: diagnostic + 3C Framework
-                                application + Abundance Mindset Reframe +
-                                delivery support.
+Premium   The Radar Special     Four-week intelligence engagement for
+                                directors, VPs, and C-suite operators.
+                                Waitlist-gated. Cohorts capped.
 ```
 
-Each tier is its own surface. The Decode is deployed independently at [radar-decode.netlify.app](https://radar-decode.netlify.app) so distribution surges (LinkedIn, podcasts, referrals) can route directly to the lowest-friction offer without dragging the buyer through any of the upper tiers' qualification flow.
+The free funnel is the dataset feeder. Every submission compounds the platform's aggregate; every diagnosis reads from that aggregate before generating output. The premium tier is positioned at the altitude where the engagement actually creates leverage; access is by waitlist application, not by checkout.
+
+The standalone Decode product on a separate domain was a V41-era surface; under the V44 funnel collapse, the entry-tier paid surfaces from the prior offer stack have been retired in favor of the single-engagement structure described above.
 
 ## Architecture
 
@@ -43,13 +46,14 @@ Each tier is its own surface. The Decode is deployed independently at [radar-dec
 - **Payments:** Stripe Checkout; server-side Stripe verification on every payment-gated write; Stripe webhooks for real-time buy events
 - **Notifications:** Telegram bot for operator alerts on every paid Stripe session
 - **AI:** Anthropic API (Claude) for diagnostic generation on the platform; the Decode is hand-written
-- **Surfaces:** `/quiz` (professional, free intake), `/rds` (paid diagnostic), `/coach` (career coaches), `/hiring` (recruiters/hiring teams), `radar-decode.netlify.app` (entry-tier Decode product), `/admin` (operator command center, auth-gated — see [architecture/admin-portal.md](./architecture/admin-portal.md))
+- **Surfaces:** `/quiz` (perception-axis free intake), `/scope` (valuation-axis free intake), `/rds` (account-gated terminal diagnostic, free), `/radar-special` (premium engagement, waitlist), `/coach` (career coaches), `/hiring` (recruiters/hiring teams), `/admin` (operator command center, auth-gated — see [architecture/admin-portal.md](./architecture/admin-portal.md))
 
 ## Build log
 
 Major releases and the technical decisions behind them are documented in [/build-log](./build-log).
 
-- [**V41 — The Radar Decode**](./build-log/v41-radar-decode.md) — standalone $47 entry-tier product, separate-domain deploy, post-payment intake flow, real-time buy alerts via Stripe webhook → Telegram
+- [**V44 — Funnel Collapse + Director-Tier Offer**](./build-log/v44-funnel-collapse.md) — dual-lane offer stack retired, single funnel into one premium engagement (The Radar Special), waitlist-gated cohorts
+- [**V41 — The Radar Decode**](./build-log/v41-radar-decode.md) — standalone entry-tier product, separate-domain deploy, post-payment intake flow, real-time buy alerts via Stripe webhook → Telegram
 - [**V40 — Funnel friction reduction**](./build-log/v40-funnel-friction.md) — name-only entry, results gated behind account creation, phone removal across paid flows
 
 ## Events
@@ -76,6 +80,7 @@ Generalized patterns extracted from Radar functions, documented for reuse and re
 
 Deeper write-ups of how individual layers of the platform are built:
 
+- [**Single-funnel architecture**](./architecture/single-funnel.md) — V44 active architecture: two free diagnostic entry points feeding one free terminal diagnostic, with a single director-tier engagement above the free stack
 - [**The admin portal**](./architecture/admin-portal.md) — `/admin` operator command center: CRM, DM pipeline, connections classifier, content intel, calendar, accounts. Where the platform actually gets run.
 
 ## Glossary
